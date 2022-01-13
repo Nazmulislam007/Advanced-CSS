@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo&family=Comic+Neue&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+html {
+  font-size: 1.25em;
+  font-family: "Comic Neue", cursive;
+}
+
+@media (max-width: 360px) {
+  html {
+    font-size: 1em;
+  }
+}
+@media (max-width: 240px) {
+  html {
+    font-size: 0.75em;
+  }
+}
+
+:root {
+  --ang: 95deg;
+}
+
+body {
+  background: linear-gradient(
+    var(--ang),
+    #000 calc(50% - 0.5px),
+    #fff calc(50% + 0.5px)
+  );
+  min-height: 100vh;
+  display: grid;
+  padding: 0.5em;
+  gap: 1.25em;
+  grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+  overflow-x: hidden;
+}
+
+@media (min-width: 37.8125em) {
+  body {
+    --ang: 85deg;
+  }
+}
+
+article {
+  height: 14em;
+  width: 14em;
+  background: #ffa940 padding-box;
+  place-self: center;
+  padding: 25px 20px 0 40px;
+  border: 0 solid rgba(135, 207, 235, 0);
+  position: relative;
+  border-width: 0 27px 27px 0;
+}
+
+article:nth-child(2) {
+  filter: invert(1);
+  background: #b4ff7d padding-box;
+}
+
+article::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border: 0 solid rgba(255, 255, 0, 0);
+  border-width: 27px 0 0 27px;
+  mix-blend-mode: difference;
+  box-shadow: inset 0 0 0 6px #ffa940;
+}
+h3 {
+  font-size: 1.5em;
+  font-weight: 900;
+  line-height: 1.75;
+}

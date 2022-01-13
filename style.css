@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+header {
+  padding: 1rem;
+  font-size: 1em;
+  font-family: "Courier New", monospace, serif;
+}
+
+p {
+  line-height: 1.4;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100vh;
+  overflow: hidden;
+  grid-template-rows: repeat(3, 33.3333333%);
+}
+
+.grid li {
+  list-style: none;
+  position: relative;
+}
+:root {
+  --offset: 1rem;
+}
+.grid li:last-child:after,
+.grid li:last-child:before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: aquamarine;
+  clip-path: polygon(
+    var(--offset) var(--offset),
+    var(--offset) calc(100% - var(--offset)),
+    calc(100% - var(--offset)) calc(100% - var(--offset)),
+    calc(100% - var(--offset)) var(--offset)
+  );
+  opacity: 0;
+}
+
+.grid li:nth-child(1):hover .grid li:last-child:before,
+.grid li:nth-child(1):hover .grid li:last-child:after {
+  opacity: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

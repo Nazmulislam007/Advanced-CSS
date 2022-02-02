@@ -320,7 +320,7 @@ a {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 32px 32px 0;
+  padding: 9px 32px 0;
 }
 
 .projects__section--header {
@@ -328,7 +328,7 @@ a {
   justify-content: space-between;
   align-items: center;
   color: var(--main-color);
-  margin-bottom: 24px;
+  margin-bottom: 3px;
 }
 
 .projects__section--header p {
@@ -346,7 +346,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 32px;
+  padding-bottom: 21px;
 }
 
 .projects__status {

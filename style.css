@@ -271,7 +271,7 @@ a {
 .app__content {
   display: flex;
   overflow: hidden;
-  padding: 16px 24px 24px 0;
+  padding: 0px 24px 24px 0;
   height: 100%;
 }
 
@@ -418,6 +418,10 @@ a {
   gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
   overflow-y: auto;
+}
+
+.project__boxes.jsGridView {
+  grid-template-columns: 1fr;
 }
 
 .project__boxes--wrapper {

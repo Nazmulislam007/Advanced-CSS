@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circle-Img</title>
+    <style>
+      * {
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #3847;
+        height: 100vh;
+      }
+
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .circle {
+        height: 270px;
+        width: 270px;
+        background: #ddd;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      .circle__img {
+        width: 210px;
+        height: 210px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: url("./z.png");
+        background-size: cover;
+        filter: grayscale(1) drop-shadow(2px 0px 6px rgba(0, 0, 0, 0.53));
+      }
+
+      .circle__text {
+        /* background: rgba(255, 0, 0, 0.374); */
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        animation: rot 10s linear infinite;
+      }
+
+      .circle__text p {
+        font-size: 1.4rem;
+        font-family: "Courier New", Courier, monospace;
+        margin: 0;
+      }
+
+      @keyframes rot {
+        0% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .circle__text p span {
+        position: absolute;
+        left: 50%;
+        transform-origin: 0 135px;
+        text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.537),
+          0 2px rgba(0, 0, 0, 0.381);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="circle">
+        <div class="circle__img"></div>
+        <div class="circle__text">
+          <p>Nazmul Islam Nahid - Web Developer</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const text = document.querySelector(".circle__text p");
+
+      const splitText = text.textContent.split("").map((char, i) => {
+        return `<span style="transform: rotate(${i * 10}deg)">${char}</span>`;
+      });
+      text.innerHTML = splitText.join("");
+    </script>
+  </body>
+</html>

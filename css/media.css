@@ -1,0 +1,61 @@
+@media screen and (min-width: 600px) {
+  .navbar {
+    padding: 1.8rem 5%;
+  }
+  .navbar-nav {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .nav-item {
+    margin-left: 2.5em;
+  }
+
+  .nav-link {
+    color: var(--White);
+    font-family: var(--ff-b);
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  header {
+    background: url("../images/desktop/image-header.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .heading {
+    font-size: 3em;
+    margin-bottom: 5.8rem;
+    margin-top: -5rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1440px;
+    width: 90%;
+    margin-inline: auto;
+  }
+
+  #stand {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  .grid__item__content {
+    padding: 4.5em 1em 2em;
+  }
+  .wrapper__gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .client__wrapper {
+    flex-direction: row;
+    width: 95%;
+    margin: auto;
+  }
+  .testimonial {
+    margin: 5rem 0px 12rem;
+  }
+}
